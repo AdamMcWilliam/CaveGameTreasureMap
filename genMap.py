@@ -2,8 +2,6 @@
 import json
 import numpy as np
 from PIL import Image
-import glob
-
 
 f = open('1026.json')
 

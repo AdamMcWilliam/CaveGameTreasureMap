@@ -10,5 +10,6 @@ for y in range(4):
         a = (x + 1) * 66
         b = (y + 1) * 66
         icon = sheet.crop((a - 66, b - 66, a, b))  # Problem here
-        icon.save("cavesprites/{}.png".format(count))
+        icon = icon.resize((33,33))
+        icon.save(f"cavesprites/{count}.png")
         count += 1

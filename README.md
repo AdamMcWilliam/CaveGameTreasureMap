@@ -20,3 +20,5 @@ For example, to create a map for pack `1026`:
 ```bash
 python genMap.py 1026
 ```
+
+Open all resulting map images in a robust photo viewer / editor like gimp or photoshop.

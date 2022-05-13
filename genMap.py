@@ -35,16 +35,20 @@ def load_sprite_images() -> dict:
         images[file.stem] = Image.open(file)
     return images
 
+def create_properly_sized_sprites(size: int) -> None:
+    create_sprites(size)
+
 
 def create_map(pack: int) -> None:
     print(f"Generating map for pack {pack}...")
     data = read_map_data(pack)
     width, height = _get_cave_size(data)
-    max_sprite_size = 65_000 // width
+    max_sprite_size = 55_000 // width
     img_wid = width * max_sprite_size
     img_hei = height * max_sprite_size
     sprite_data = _get_sprite_data(data)
     del data
+    create_properly_sized_sprites(max_sprite_size)
     images = load_sprite_images()
     # Instantiate full map size
     print(f"instantiating image ({img_wid}, {img_hei})")
